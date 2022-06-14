@@ -28,6 +28,10 @@ formDOM.addEventListener("submit", async (e) => {
   const msg = msgInputDOM.value;
 
   try {
+    // localhost
+    // "http://localhost:5000/api/v1/contact-form";
+    // the heroku URL
+    // "https://tea-website-backend.herokuapp.com/api/v1/contact-form"
     await axios.post(
       "https://tea-website-backend.herokuapp.com/api/v1/contact-form",
       {
