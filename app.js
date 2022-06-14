@@ -28,11 +28,14 @@ formDOM.addEventListener("submit", async (e) => {
   const msg = msgInputDOM.value;
 
   try {
-    await axios.post("http://localhost:5000/api/v1/contact-form", {
-      name,
-      email,
-      msg,
-    });
+    await axios.post(
+      "https://tea-website-backend.herokuapp.com/api/v1/contact-form",
+      {
+        name,
+        email,
+        msg,
+      }
+    );
     nameInputDOM.value = "";
     emailInputDOM.value = "";
     msgInputDOM.value = "";
