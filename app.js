@@ -50,12 +50,10 @@ formDOM.addEventListener("submit", async (e) => {
         body: JSON.stringify({
           name,
           email,
-          msg,
+          message,
         }),
       }
-    )
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    ).then((data) => console.log(data));
     nameInputDOM.value = "";
     emailInputDOM.value = "";
     msgInputDOM.value = "";
