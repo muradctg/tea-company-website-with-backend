@@ -25,7 +25,7 @@ formDOM.addEventListener("submit", async (e) => {
 
   const name = nameInputDOM.value;
   const email = emailInputDOM.value;
-  const msg = msgInputDOM.value;
+  const message = msgInputDOM.value;
 
   try {
     // localhost
@@ -58,7 +58,7 @@ formDOM.addEventListener("submit", async (e) => {
     emailInputDOM.value = "";
     msgInputDOM.value = "";
   } catch (error) {
-    console.log(name, email, msg);
+    console.log(name, email, message);
     console.log("error");
   }
 });
