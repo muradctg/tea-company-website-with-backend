@@ -32,14 +32,27 @@ formDOM.addEventListener("submit", async (e) => {
     // "http://localhost:5000/api/v1/contact-form";
     // the heroku URL
     // "https://tea-website-backend.herokuapp.com/api/v1/contact-form"
-    await axios.post(
-      "https://tea-website-backend.herokuapp.com/api/v1/contact-form",
-      {
+    // await axios.post(
+    //   "https://tea-website-backend.herokuapp.com/api/v1/contact-form",
+    //   {
+    //     name,
+    //     email,
+    //     msg,
+    //   }
+    // );
+    await fetch("http://localhost:5000/api/v1/contact-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         name,
         email,
         msg,
-      }
-    );
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
     nameInputDOM.value = "";
     emailInputDOM.value = "";
     msgInputDOM.value = "";
