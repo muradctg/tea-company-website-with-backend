@@ -40,17 +40,20 @@ formDOM.addEventListener("submit", async (e) => {
     //     msg,
     //   }
     // );
-    await fetch("http://localhost:5000/api/v1/contact-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        msg,
-      }),
-    })
+    await fetch(
+      "https://tea-website-backend.herokuapp.com/api/v1/contact-form",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          msg,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
     nameInputDOM.value = "";
